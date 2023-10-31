@@ -60,9 +60,9 @@
 
 
         If frm1.InsertarMantenimiento(idMantenimiento, Nombre, Servicio, Descripcion, Tecnico, Estado, NumVIN) Then
-            MessageBox.Show("Mantenimiento insertado con éxito.")
+            MessageBox.Show("Mantenimiento generado con éxito.")
         Else
-            MessageBox.Show("Hubo un error al insertar el vehículo.")
+            MessageBox.Show("Hubo un error al generar.")
         End If
     End Sub
 
@@ -92,5 +92,23 @@
         Else
             MessageBox.Show("Error al editar.")
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim idMantenimiento As Integer = Integer.Parse(TextBox5.Text)
+        Dim dt As DataTable = frm1.GetMantByNumVIN(idMantenimiento)
+
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            TextBox4.Text = row("Nombre").ToString()
+            TextBox2.Text = row("Servicio").ToString()
+            TextBox3.Text = row("Descripcion").ToString()
+            TextBox1.Text = row("Tecnico").ToString()
+            TextBox6.Text = row("NumVIN").ToString()
+            ' Ya tienes el NumVIN, pero si deseas mostrarlo nuevamente en otro TextBox, puedes hacerlo.
+        Else
+            MessageBox.Show("No se encontró el mantenimiento.")
+        End If
+
     End Sub
 End Class

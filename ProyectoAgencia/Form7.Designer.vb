@@ -78,7 +78,7 @@ Partial Class Form7
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(532, 343)
+        Me.Button3.Location = New System.Drawing.Point(433, 343)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(123, 37)
         Me.Button3.TabIndex = 81
@@ -123,6 +123,7 @@ Partial Class Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)

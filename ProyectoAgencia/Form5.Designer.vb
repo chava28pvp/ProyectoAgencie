@@ -71,6 +71,7 @@ Partial Class Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

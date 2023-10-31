@@ -38,7 +38,8 @@ Public Class Form5
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim query As String = "SELECT * FROM mantenimiento" ' Adapta tu_tabla al nombre real de tu tabla
+        ' Usamos INNER JOIN entre vehiculos y mantenimiento basándonos en la columna NumVIN
+        Dim query As String = "SELECT * FROM mantenimiento INNER JOIN mantenimiento ON vehiculos.NumVIN = mantenimiento.NumVIN"
 
         Using connection As New MySqlConnection(ConnectionString)
             Try
@@ -63,6 +64,7 @@ Public Class Form5
             End Try
         End Using
     End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ' Crea un SaveFileDialog para que el usuario pueda elegir dónde guardar el archivo

@@ -28,7 +28,50 @@ Public Class Connection2
             End Try
         End Using
     End Function
+    Public Function GetMantByNumVIN(numVIN As Integer) As DataTable
+        Dim dt As New DataTable()
 
+        Using connection As New MySqlConnection(ConnectionString)
+            Try
+                connection.Open()
+
+                Dim cmd As New MySqlCommand("SELECT * FROM mantenimiento WHERE idMantenimiento = @idMantenimiento", connection)
+                cmd.Parameters.AddWithValue("@idMantenimiento", numVIN)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                adapter.Fill(dt)
+
+            Catch ex As Exception
+                MessageBox.Show("Error al cargar los datos: " & ex.Message)
+            Finally
+                connection.Close()
+            End Try
+        End Using
+
+        Return dt
+    End Function
+    Public Function GetVehicleByNumVIN(numVIN As Integer) As DataTable
+        Dim dt As New DataTable()
+
+        Using connection As New MySqlConnection(ConnectionString)
+            Try
+                connection.Open()
+
+                Dim cmd As New MySqlCommand("SELECT * FROM vehiculos WHERE NumVIN = @NumVIN", connection)
+                cmd.Parameters.AddWithValue("@NumVIN", numVIN)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                adapter.Fill(dt)
+
+            Catch ex As Exception
+                MessageBox.Show("Error al cargar los datos: " & ex.Message)
+            Finally
+                connection.Close()
+            End Try
+        End Using
+
+        Return dt
+    End Function
     Public Function InsertarMantenimiento(ByVal idMantenimiento As Integer, ByVal Nombre As String, ByVal Servicio As String, ByVal Descripcion As String, ByVal Tecnico As String, ByVal Estado As String, ByVal NumVIN As Integer) As Boolean
 
         Dim query As String = "INSERT INTO mantenimiento (idMantenimiento, Nombre, Servicio, Descripcion, Tecnico, Estado, NumVIN) VALUES (@idMantenimiento, @Nombre, @Servicio, @Descripcion, @Tecnico, @Estado, @NumVIN)"

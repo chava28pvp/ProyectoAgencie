@@ -38,9 +38,9 @@
 
 
         If frm1.InsertarServicio(NumServVIN, FechaAsign, NumVIN) Then
-            MessageBox.Show("Vehículo insertado con éxito.")
+            MessageBox.Show("Fecha establecida con éxito.")
         Else
-            MessageBox.Show("Hubo un error al insertar el vehículo.")
+            MessageBox.Show("Hubo un error al establecer fecha.")
         End If
     End Sub
 
@@ -60,9 +60,9 @@
         Dim resultado As Boolean = frm1.UpdateServicio(NumServVIN, FechaAsign, NumVIN)
 
         If resultado Then
-            MessageBox.Show("Vehículo editado con éxito.")
+            MessageBox.Show("Fecha editado con éxito.")
         Else
-            MessageBox.Show("Error al editar el vehículo.")
+            MessageBox.Show("Error al editar la fecha.")
         End If
     End Sub
 
@@ -71,11 +71,11 @@
         Dim NumServVIN As Integer
         If Integer.TryParse(TextBox2.Text, NumServVIN) Then ' Intentamos convertir el texto a un número entero.
             If frm1.EliminarVehiculo(NumServVIN) Then
-                MessageBox.Show("Vehículo eliminado con éxito.")
+                MessageBox.Show("Fecha eliminada con éxito.")
                 ' Opcionalmente, puedes limpiar el TextBox después de una eliminación exitosa.
                 TextBox2.Clear()
             Else
-                MessageBox.Show("Error al eliminar el vehículo.")
+                MessageBox.Show("Error al eliminar la fecha.")
             End If
         Else
             MessageBox.Show("Por favor, ingrese un NumVIN válido.")

@@ -52,6 +52,7 @@ Public Class Form2
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Dim frmAdmin As New Form3
         frmAdmin.Show()
+
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
@@ -106,5 +107,22 @@ Public Class Form2
     Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
         Dim form2 As New Form6()
         form2.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim numVIN As Integer = Integer.Parse(TextBox1.Text)
+        Dim dt As DataTable = frm1.GetVehicleByNumVIN(numVIN)
+
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            TextBox2.Text = row("Marca").ToString()
+            TextBox3.Text = row("Modelo").ToString()
+            TextBox4.Text = row("Anio").ToString()
+            TextBox5.Text = row("Kilometraje").ToString()
+            ' Ya tienes el NumVIN, pero si deseas mostrarlo nuevamente en otro TextBox, puedes hacerlo.
+        Else
+            MessageBox.Show("No se encontró un vehículo con el NumVIN especificado.")
+        End If
+
     End Sub
 End Class

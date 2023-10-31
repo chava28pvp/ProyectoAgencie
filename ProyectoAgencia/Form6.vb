@@ -22,8 +22,8 @@ Public Class Form6
         Dim dt As DataTable = GetData(query)
 
         Chart1.DataSource = dt
-        Chart1.Series("Series1").XValueMember = "idMantenimiento"
-        Chart1.Series("Series1").YValueMembers = "Estado"
+        Chart1.Series("Series1").XValueMember = "Estado"
+        Chart1.Series("Series1").YValueMembers = "idMantenimiento"
         Chart1.DataBind()
     End Sub
     Private Sub Form6_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,5 +32,9 @@ Public Class Form6
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LoadDataIntoChart()
+    End Sub
+
+    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
+
     End Sub
 End Class

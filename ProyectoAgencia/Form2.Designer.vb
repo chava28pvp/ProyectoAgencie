@@ -41,11 +41,12 @@ Partial Class Form2
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(165, 411)
+        Me.Button1.Location = New System.Drawing.Point(198, 411)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 37)
         Me.Button1.TabIndex = 2
@@ -63,7 +64,7 @@ Partial Class Form2
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(598, 411)
+        Me.Button3.Location = New System.Drawing.Point(510, 411)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(123, 37)
         Me.Button3.TabIndex = 4
@@ -210,11 +211,22 @@ Partial Class Form2
         Me.LinkLabel5.TabStop = True
         Me.LinkLabel5.Text = "Dashboard"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(657, 411)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(123, 37)
+        Me.Button4.TabIndex = 22
+        Me.Button4.Text = "Buscar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(871, 506)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.LinkLabel5)
         Me.Controls.Add(Me.LinkLabel3)
         Me.Controls.Add(Me.LinkLabel4)
@@ -259,4 +271,5 @@ Partial Class Form2
     Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkLabel5 As LinkLabel
+    Friend WithEvents Button4 As Button
 End Class

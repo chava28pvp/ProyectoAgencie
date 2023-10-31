@@ -40,6 +40,7 @@ Partial Class Form3
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -119,7 +120,7 @@ Partial Class Form3
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(569, 370)
+        Me.Button3.Location = New System.Drawing.Point(526, 370)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(123, 37)
         Me.Button3.TabIndex = 54
@@ -128,7 +129,7 @@ Partial Class Form3
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(318, 370)
+        Me.Button1.Location = New System.Drawing.Point(369, 370)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(123, 37)
         Me.Button1.TabIndex = 53
@@ -137,7 +138,7 @@ Partial Class Form3
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(136, 370)
+        Me.Button4.Location = New System.Drawing.Point(228, 370)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(123, 37)
         Me.Button4.TabIndex = 52
@@ -192,11 +193,22 @@ Partial Class Form3
         Me.Label8.TabIndex = 69
         Me.Label8.Text = "Numero de VIN:"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(681, 370)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(123, 37)
+        Me.Button2.TabIndex = 71
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(913, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TextBox5)
@@ -240,4 +252,5 @@ Partial Class Form3
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents Button2 As Button
 End Class
